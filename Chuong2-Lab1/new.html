@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <title>Google</title>
+        <link href="css/style.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<div class="wrapper">
+        <!-- HEADER -->
+        <div class="header">
+                <h1 class="heading">Create your Google Account</h1>
+        </div>
+        <!-- END HEADER -->
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+                <!-- DYNAMIC CONTENT -->
+                <div class="container">
+                        <!-- ITEM 1 -->
+                        <div class="row">
+                                <div class="col-md-7 col-12 float">
+                                        <div class="content-left">
+                                                <h3>One account is all you need</h3>
+                                                <p>A single username and password gets you into everything Google.</p>
+                                                <img src="img/1.jpg" class="img-responsive" />
+                                                <div class="log">
+                                                        <h2>Take it all with you</h2>
+                                                        <p>Switch between devices, and pick up wherever you left off.</p>
+                                                </div>
+
+                                                <img src="img/2.jpg" class="img-responsive">
+                                        </div>
+                                </div>
+                                <div class="col-md-5 col-12 float">
+                                        <div class="content-right">
+                                                <form action="" method="post" onsubmit="return checkValidate()">
+                                                        <b>Name</b>
+                                                        <div class="row">
+                                                                <div class="col">
+                                                                        <input type="text" class="form-control" placeholder="First name">
+                                                                </div>
+                                                                <div class="col">
+                                                                        <input type="text" class="form-control" placeholder="Last name">
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                                <b>Choose your username</b>
+                                                                <input type="text" class="form-control" id="name" placeholder="@gmail.com">
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <b>Create a password</b>
+                                                                <input type="password" class="form-control" id="password" value="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <b>Confirm your password</b>
+                                                                <input type="password1" class="form-control" id="password1" value="">
+                                                        </div>
+
+                                                        <b >Gender</b>
+                                                        <div class="form-group">
+                                                                <select class="form-control" id="gender">
+                                                                        <option selected>I am...</option>
+                                                                        <option value="0">male</option>
+                                                                        <option value="1">female</option>
+                                                                </select>
+                                                        </div>
+                                                        <b>Birthday</b>
+                                                        <div class="form-row">
+                                                                <div class="form-group col-md-4">
+                                                                        <select id="month" name="month"  class="custom-select mr-sm-2">
+                                                                                <option selected>Month</option>
+                                                                                <script>
+                                                                                        for(var j = 1; j<=12;j++){
+                                                                                                document.write("<option value=\""+j+"\">"+j+"<//option>");
+                                                                                        }
+                                                                                </script>
+                                                                        </select>
+
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                        <input type="text" class="form-control" id="day" placeholder="Day">
+                                                                </div>
+
+                                                                <div class="form-group col-md-4">
+                                                                        <input type="text" class="form-control" id="year" placeholder="Year">
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                                <b>Mobile Phone</b>
+                                                                <input type="number" class="form-control" id="phone" value=""  placeholder="+84">
+                                                        </div>
+                                                        <div class="form-group">
+                                                                <b>Your current email address</b>
+                                                                <input type="email" class="form-control" id="email" value="">
+                                                        </div>
+
+                                                        <b>Prove you're not a robot</b>
+                                                        <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" value="" id="check">
+                                                                <p>
+                                                                        Skip this verification(phone verification may be required)
+                                                                </p>
+                                                        </div>
+                                                        <img src="img/3.jpg" class="img">
+                                                        <br>
+
+                                                        <div class="form-group2" style="width: 100%;">
+                                                                <b class="chunho">Type the text:</b>
+                                                                <br>
+                                                                <input type="text" id="type" name="type" class="txt" value="" style="margin-right: 15px;">
+                                                                <i class='fas fa-undo icon'></i>
+                                                                <i class='fas fa-volume-up icon'></i>
+                                                                <i class="fas fa-question-circle icon"></i>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                                <b>Location</b>
+                                                                <select class="custom-select mr-sm-2" id="country">
+                                                                        <option value="1">Vietnam(ViệtNam)</option>
+                                                                        <option value="2">USA(Mỹ)</option>
+                                                                </select>
+                                                        </div>
+
+
+                                                </form>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- END ITEM 1 -->
+
+                </div>
+                <!-- END DYNAMIC CONTENT -->
+        </div>
+        <!-- END MAIN CONTENT -->
+
+        <!-- FOOTER -->
+        <div class="footer">
+
+        </div>
+        <!-- END FOOTER -->
+</div>
+</body>
+</html>

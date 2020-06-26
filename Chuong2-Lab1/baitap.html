@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gửi bài tập lớn</title>
+    <link href="css/style2.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+<form action="" method="post" enctype="multipart/form-data" onsubmit="return checkValidate()">
+    <div class="center">
+    <h2>Gửi bài tập lớn</h2>
+    </div>
+    <table class="table">
+        <tr>
+            <td>Tên sinh viên (*) :</td>
+            <td>
+                <input type="text" id="name" name="name" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Lớp(*):</td>
+            <td>
+                <input type="text" id="lop" name="lop" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Ngày nộp bài:</td>
+            <td>
+                <span>3/9/2005</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Bài tập sẽ gửi(*):</td>
+            <td>
+                <input type="file" id="homework" name="homework" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Địa chỉ liên hệ:</td>
+            <td>
+                <input type="text" id="address" name="address" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>E-mail:</td>
+            <td>
+                <input type="email" id="email" name="email" value="">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Ghi chú:</td>
+            <td>
+                <textarea id="note" name="note" cols="20" rows="3"></textarea>
+            </td>
+        </tr>
+
+    </table>
+    <div class="center">
+        <input type="submit" name="submit" value="Lưu">
+        <input type="reset" name="reset" value="Làm lại">
+    </div>
+
+</form>
+
+<div id="error" style="color: red;"></div>
+<div id="result" style="color: green;"></div>
+<script type="text/javascript">
+    function checkValidate() {
+        var error = '';
+        var result = '';
+        var obj_name = document.getElementById('name');
+        var name = obj_name.value;
+        var obj_lop = document.getElementById('lop');
+        var lop = obj_lop.value;
+        var obj_homework = document.getElementById('homework');
+        var homework = obj_homework.value;
+        var obj_address = document.getElementById('address');
+        var address = obj_address.value;
+        var obj_email = document.getElementById('email');
+        var email = obj_email.value;
+        var obj_note = document.getElementById('note');
+        var note = obj_note.value;
+
+        //check đk
+        if (name == ''){
+            error = "Tên sinh viên không để trống";
+            obj_name.focus();
+        }else if (lop==''){
+            error = 'lớp không để trống';
+            obj_lop.focus();
+        }else if (homework==''){
+            error = 'Bài tập sẽ gửi không để trống';
+            obj_homework.focus();
+        }else{
+            result += "Tên sinh viên: " +name+ "<br>";
+            result += "Lớp: " + lop + "<br>";
+            result += "Ngày gửi bài: 3/9/2005"+"<br>";
+            result += "Bài tập sẽ gửi: "+ homework+"<br>";
+            result += "Địa chỉ liên hệ: " + address + "<br>";
+            result += "E-mail: " + email + "<br>";
+            result += "Ghi chú: " +note+ "<br>";
+        }
+        //hiện thị ra màn hình
+        document.getElementById('error').innerHTML = error;
+        document.getElementById('result').innerHTML = result;
+        return false;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+body{
+    padding: 50px;
+    color: #0C7FCC;
+
+}
+.center {
+    text-align: center;
+    color: #0C7FCC;
+}
+
+.table tr td{
+    border: 2px solid #0a90eb;
+}

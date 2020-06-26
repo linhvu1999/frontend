@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<title>Yahoo!</title>
+
+    <style>
+        body{
+            padding: 40px;
+            background: #CEF6E3;
+            width: 100%;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            display: inline-block;
+            margin-right: 500px;
+        }
+
+        th{
+            width: 30%;
+
+            text-align: right;
+        }
+        table,td{
+            width: 600px;
+
+        }
+        textarea{
+            text-align: center;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<form action="" method="post" onsubmit="return checkValidate()">
+	<ul>
+		<li><h1>Yahoo!</h1></li>
+		<li>Yahoo| Help</li>
+	</ul>
+	<p>
+		Get a Yahoo! ID and free email to connect to people and info that you<br>
+		care about.
+	</p>
+	<hr>
+	<table>
+		<table class="content">
+			<tr>
+				<th>Name</th>
+				<td>
+					<input type="text" id="first_name" name="first_name" value="" placeholder="First Name">
+					<input type="text" id="last_name" name="last_name" value="" placeholder="Last Name">
+				</td>
+			</tr>
+
+			<tr>
+				<th>Gender</th>
+				<td>
+					<select id="gender">
+						<option value="-1">-select one-</option>
+						<option value="0">Nam</option>
+						<option value="1">Nữ</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th>Birthday</th>
+				<td>
+
+					<label for="day">Ngày</label>
+					<select id="day" name="day">
+						<script>
+							for(var i = 1; i<=31;i++){
+								document.write("<option value=\""+i+"\">"+i+"<//option>");
+							}
+						</script>
+					</select>
+					<label for="month">  Tháng</label>
+					<select id="month" name="month">
+						<script>
+                            for(var j = 1; j<=12;j++){
+							document.write("<option value=\""+j+"\">"+j+"<//option>");
+						}
+						</script>
+					</select>
+					<label for="year">  Năm</label>
+					<select id="year" name="year">
+						<script>
+							var d = new Date();
+							var _year = d.getFullYear();
+							for(var k = 1900; k<=_year;k++){
+								document.write("<option value=\""+k+"\">"+k+"<//option>");
+							}
+						</script>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th>Country</th>
+				<td>
+					<select id="country">
+						<option value="-1">-Select one-</option>
+						<option value="0">Vietnam</option>
+						<option value="1">USA</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<p>Select an ID and Password</p>
+		<hr>
+		<table class="content">
+			<tr>
+				<th>
+					Yahoo! ID and Email
+				</th>
+				<td>
+					<input id="email" type="text" name="email">@
+					<select id="emailone">
+						<option value="0">yahoo.com</option>
+						<option value="1">gmail.com</option>
+					</select>
+					<input type="submit" name="submit" value="check" placeholder="check"></input>
+				</td>
+			</tr>
+
+			<tr>
+				<th>Password</th>
+				<td>
+					<input id="password" type="password" name="password" value="">
+				</td>
+			</tr>
+			<tr>
+				<th>Re-type Password</th>
+				<td>
+					<input id="re_pass" type="password" name="re_pass" value="">
+				</td>
+			</tr>
+		</table>
+		<p>In case you forget your ID or password...</p>
+		<hr>
+
+		<table class="content">
+			<tr>
+				<th>Attemate Email</th>
+				<td>
+					<input id="att_email" type="att_email" name="att_email" value="">
+				</td>
+			</tr>
+			<tr>
+				<th>Secret Question 1</th>
+				<td>
+					<select id="question">
+						<option value="-1">-Select One-</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>Your Answer</th>
+				<td>
+					<input id="answer" type="text" name="answer" value="">
+				</td>
+			</tr>
+
+			<tr>
+				<th>Secret Question 2</th>
+				<td>
+					<select id="question2">
+						<option value="-1">-Select One-</option>
+						<option value="0">1</option>
+						<option value="1">2</option>
+					</select>
+				</td>
+			</tr>
+
+			<tr>
+				<th>Your Answer</th>
+				<td>
+					<input id="answer1" type="text" name="answer1" value="">
+				</td>
+			</tr>
+
+		</table>
+		<hr>
+		<table class="content">
+			<tr>
+				<th>Type the code shown</th>
+				<td>
+					<input id="code" type="text" name="code" value="">
+					<i class="fas fa-volume-up">Need audio..?</i>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<textarea rows="4" cols="18">
+						FFGG06
+					</textarea>
+				</td>
+			</tr>
+		</table>
+		<table class="content">
+			<tr>
+				<th></th>
+				<td>
+					<input class="btn btn-warning" type="submit" name="submit" value="Create My Account">
+				</td>
+			</tr>
+		</table>
+		
+		
+
+	</table>
+
+</form>
+
+
+<div id="error" style="color: red"></div>
+<div id="result" style="color: green"></div>
+<script type="text/javascript">
+	//lấy ra thông tin các đối tượng tương ứng
+	function checkValidate() {
+		var error = '';
+		var result = '';
+		var obj_fisrtname = document.getElementById('first_name');
+		var first_name = obj_fisrtname.value;
+
+		var obj_lastname = document.getElementById('last_name');
+		var last_name = obj_lastname.value;
+
+		var obj_gender = document.getElementById('gender');
+		var gender  = obj_gender.value;
+
+		var obj_day = document.getElementById('day');
+		var day  = obj_day.value;
+
+		var obj_month = document.getElementById('month');
+		var month = obj_month.value;
+
+		var obj_year = document.getElementById('year');
+		var year = obj_year.value;
+
+		var obj_country = document.getElementById('country');
+		var country = obj_country.value;
+
+		var obj_email = document.getElementById('email');
+		var email = obj_email.value;
+
+		var obj_emailone = document.getElementById('emailone');
+		var emailone = obj_emailone.value;
+
+		var obj_pass = document.getElementById('password');
+		var password = obj_pass.value;
+
+		var obj_re_pass = document.getElementById('re_pass');
+		var re_pass = obj_re_pass.value;
+
+		var obj_att_email = document.getElementById('att_email');
+		var att_email = obj_att_email.value;
+
+		var obj_question = document.getElementById('question');
+		var question = obj_question.value;
+
+		var obj_answer = document.getElementById('answer');
+		var answer = obj_answer.value;
+
+		var obj_question2 = document.getElementById('question2');
+		var question2 = obj_question2.value;
+
+		var obj_answer1 = document.getElementById('answer1');
+		var answer1 = obj_answer1.value;
+
+		var obj_code = document.getElementById('code');
+		var code  = obj_code.value;
+		//kiểm tra validate
+		if (first_name=='' || last_name==''){
+			error = 'name không được để trống';
+			obj_fisrtname.focus();
+			obj_lastname.focus();
+		}else if (gender==-1){
+			error = 'Gender cần được chọn';
+			obj_gender.focus();
+		}
+		else if (country==-1){
+			error = 'Country cần được chọn';
+			obj_country.focus();
+		}
+
+		else if (email==''){
+			error = 'Email không để trống';
+		}
+		else if (password!=re_pass){
+			error = 'Pass sai';
+			obj_pass.focus();
+			obj_re_pass.focus();
+		}
+		else if (att_email==''){
+			error = "att_email không được để trống";
+			obj_att_email.focus();
+		}
+		else if (answer==''){
+			error = "Your answer không để trống";
+			obj_answer.focus();
+		}
+		else if (question==-1){
+			error = "Secret question cần được chọn";
+			obj_question.focus();
+		}
+		else if (answer1==''){
+			error = "Your answer không để trống";
+			obj_answer1.focus();
+		}
+		else if (question2==-1){
+			error = "Secret question cần được chọn";
+			obj_question2.focus();
+		}
+		else{
+			result += "First Name: " + first_name + "<br />";
+			result += "Last Name: " + last_name + "<br />";
+			result += "Gender: " ;
+			gender = parseInt(gender);
+			switch (gender) {
+				case 0:
+					result += "Nam"+"<br/>";
+					break;
+				case 1:
+					result += "Nữ"+"<br/>";
+					break;
+
+			}
+			result += "D:m:y = " + day + "/" + month + "/" + year +  "<br/>";
+			
+			result += "Country: " ;
+			country = parseInt(country);
+			switch (country) {
+				case 0:
+					result += "Vietnam"+"<br/>";
+					break;
+				case 1:
+					result += "USA"+"<br/>";
+					break;
+
+			}
+			result += "Yahoo! ID and Email: "+ email+"@";
+			emailone = parseInt(emailone);
+			switch (emailone) {
+				case 0:
+					result += "yahoo.com"+"<br/>";
+					break;
+				case 1:
+					result += "gmail.com"+"<br/>";
+					break;
+
+			}
+
+			result += "Pass: " + password + "<br/>";
+			result += "Re_pass : " + re_pass + "<br/>";
+			result += "Attemate Email : " + att_email + "<br/>";
+			result += "Secret question1: " ;
+			question = parseInt(question);
+			switch (question) {
+				case 0:
+					result += "1"+"<br/>";
+					break;
+				case 1:
+					result += "2" + "<br/>";
+					break;
+
+			}
+			result += "Your Answer : " + answer + "<br/>";
+			result += "Secret question2: " ;
+			question2 = parseInt(question2);
+			switch (question2) {
+				case 0:
+					result += "1"+"<br/>";
+					break;
+				case 1:
+					result += "2" + "<br/>";
+					break;
+
+			}
+
+			result += "Your Answer : " + answer1 + "<br/>";
+			result += "Type code : " + code + "<br/>";
+
+			
+		}
+		//hiện thị ra màn hình
+		document.getElementById('error').innerHTML = error;
+		document.getElementById('result').innerHTML = result;
+		return false;
+
+	}
+
+
+</script>
+
+</body>
+</html>

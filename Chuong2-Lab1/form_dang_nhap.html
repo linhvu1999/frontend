@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form đăng nhập</title>
+	<!-- <link rel="css/style.css" type="text/css" href=""> -->
+	<meta name="viewport" content="widtd = device-widtd, initial-scale=1">
+
+	<style type="text/css">
+		.red{
+			color: red;
+		}
+		body{
+			border: 1px solid grey;
+			font-size: 24px;
+		}
+		.p{
+			background: #0d6aad;
+			color: #fff;
+			padding-right: 300px;
+		}
+		.header{
+			text-align: center;
+		}
+		.main-content{
+			margin: 40px;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- HEADER -->
+	<div class="header">
+		<h2>ĐĂNG KÝ KHÁCH HÀNG</h2>
+	</div>
+	<!-- END HEADER -->
+
+	<!-- MAIN -->
+	<div class="main-content">
+		<div class="container">
+
+			<form action="" metdod="post" onsubmit="return checkValidate()">
+				<table>
+					<tr>
+						<div class="p">
+							Thông tin đăng nhập
+						</div>
+					</tr>
+
+					<tr>
+						<td>Tên đăng nhập:</td>
+						<td>
+							<input type="text" name="name" id="name" value="" placeholder="phetitic">
+						</td>
+					</tr>
+
+					<tr>
+						<td>Mật khẩu</td>
+						<td>
+							<input type="password" name="password" id="password" value="">
+						</td>
+					</tr>
+
+					<tr>
+						<td>Nhập lại mật khẩu:</td>
+						<td>
+							<input type="password" name="password1" id="password1" value="">
+						</td>
+					</tr>
+				</table>
+
+				<table>
+					<tr>
+						<div class="p">
+							Thông tin đăng nhập
+						</div>
+					</tr>
+
+					<tr>
+						<td>Họ tên khách hàng:</td>
+						<td>
+							<input id="fullname" type="text" name="fullname" value=""><span class="red">(*)</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Ngày sinh</td>
+						<td>
+							<input type="text" id="date" name="date" value=""><span class="red">(*)</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Gioi tính:</td>
+						<td>
+							<input checked="checked" type="radio" id="gender_male" name="gender" value="0">Nam
+							<input type="radio" id="gender_female" name="gender" value="1">Nữ
+						</td>
+					</tr>
+					<tr>
+						<td>Đại chỉ Mail: </td>
+						<td>
+							<input type="text" id="mail" name="mail" value="" placeholder="thanhphet"><span class="red">(*)</span>
+						</td>
+					</tr>
+					<tr>
+						<td>Thu nhập</td>
+						<td>
+							<input type="text" id="income" name="income" value="" placeholder="5000000">
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="submit" name="submit" value="Đăng ký">
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<span class="red">
+								<p>Danh sách các lỗi:</p>
+								<ul>
+									<li>Họ tên không được rỗng</li>
+									<li>Ngày sinh không hợp lệ</li>
+									<li>Email không hợp lệ</li>
+								</ul>
+							</span>
+						</td>
+					</tr>
+				</table>
+			</form>
+				
+			
+		</div>
+	</div>
+	<!-- END MAIN -->
+</body>
+</html>
+
+<div id="error" style="color: red"></div>
+<div id="result" style="color: green"></div>
+<script type="text/javascript" >
+	function checkValidate() {
+		var pattern = /^((0[1-9]|[12][0-9]|3[01])(\/)(0[13578]|1[02]))|((0[1-9]|[12][0-9])(\/)(02))|((0[1-9]|[12][0-9]|3[0])(\/)(0[469]|11))(\/)\d{4}$/;
+		var error = '';
+		var result = '';
+		var obj_name = document.getElementById('name');
+		var name = obj_name.value;
+
+		var obj_password = document.getElementById('password');
+		var password = obj_password.value;
+
+		var obj_password1 = document.getElementById('password1');
+		var password1 = obj_password1.value;
+
+		var obj_fullname = document.getElementById('fullname');
+		var fullname = obj_fullname.value;
+
+		var obj_date = document.getElementById('date');
+		var date = obj_date.value;
+
+		var obj_gender_male= document.getElementById('gender_male');
+		var gender_male = obj_gender_male.value;
+		var obj_gender_female= document.getElementById('gender_female');
+		var gender_female = obj_gender_female.value;
+
+		var obj_mail = document.getElementById('mail');
+		var mail = obj_mail.value;
+
+		var obj_income = document.getElementById('income');
+		var income = obj_income.value;
+
+		if (fullname==''){
+			error = "Họ tên khách hàng không được để trống";
+			obj_fullname.focus();
+		}else if (date==''){
+			error = "Ngày sinh không để trống";
+			obj_date.focus();
+		}else if (mail==''){
+			error = "Địa chỉ mail không để trống";
+			obj_mail.focus();
+		}else if (password != password1){
+			error = "Password chưa đúng";
+			obj_password.focus();
+			obj_password1.focus();
+		}
+		else if (date == null || date == "" || !pattern.test(date)) {
+			error= "Ngày tháng không hợp lệ\n";
+			obj_date.focus();
+		}
+		else{
+			result += "Tên đăng nhập: " +name + "<br>";
+			result += "Mật khẩu: "+ password + "<br>";
+			result += "Nhập lại mật khẩu:" + password1 + "<br>";
+			result += "Họ tên khách hàng : " +fullname + "<br>";
+			result += "DD/MM/YYYY: "+ date + "<br>";
+
+			result += "Gioi tính:"
+			if(document.getElementById('gender_male').checked) {
+				result += "Nam" + "<br>";
+			}else if(document.getElementById('gender_female').checked) {
+				result += "Nữ" + "<br>";
+			}
+			result += "Địa chỉ mail:" +mail + "<br>";
+			result += "Thu nhập: " + income + "<br>";
+		}
+		//hiện thị ra màn hình
+		document.getElementById('error').innerHTML = error;
+		document.getElementById('result').innerHTML = result;
+		return false;
+	}
+</script>

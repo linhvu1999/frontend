@@ -1,0 +1,109 @@
+.header, .footer {
+    background: #fff;
+    color: #000;
+    text-align: center;
+    padding: 5px;
+    font-size: 20px;
+    padding: 30px;
+}
+
+body {
+    margin: 0;
+}
+
+/*ul {*/
+/*    background: #ccc;*/
+/*}*/
+
+/*ul li {*/
+/*    display: inline-block;*/
+/*    padding: 10px 15px;*/
+/*}*/
+
+/*.active {*/
+/*    background: #fff;*/
+/*}*/
+
+/*ul li a {*/
+/*    text-decoration: none;*/
+/*}*/
+
+.container {
+    max-width: 60%;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+.float {
+    float: left;
+}
+
+.col-md-7 {
+    width: 60%;
+}
+
+.col-md-5 {
+    width: 40%;
+
+}
+
+.row {
+    display: flex;  /* table */
+}
+
+.content-right {
+    padding: 20px;
+    background: #D8D8D8;
+}
+.content-left {
+
+    text-align: center;
+}
+.img-responsive{
+    margin: 20px;
+}
+.img{
+    width: 100% !important;
+    height: 70px;
+}
+.form-group2{
+    background-color: white;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+.chunho{
+    padding-top: 10px;
+}
+.txt{
+    width: 280px;
+    border-color: #e8e6e696;
+    margin-top: 5px;
+}
+.icon{
+    margin: 0px 3px
+}
+.log{
+    margin: 30px;
+}
+h3 {
+    margin: 0;
+}
+
+.title-link {
+    text-decoration: none;
+}
+
+.red {
+    color: red;
+}
+
+#error {
+    color: red;
+}
+
+#result {
+    color: green;
+}
